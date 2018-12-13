@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular入门小demo-5事件指令</title>
+    <script src="angular.min.js"></script>
+
+    <script>
+        var app=angular.module("myApp",[]);
+        app.controller("myController",function ($scope) {
+            $scope.add=function () {
+                $scope.z = parseInt($scope.x)+parseInt($scope.y);
+            }
+        });
+    </script>
+
+</head>
+
+<body ng-app="myApp" ng-controller="myController">
+第一个数:<input ng-model="x"/>
+第二个数:<input ng-model="y"/>
+<!--单击时间触发的方法-->
+<button ng-click="add()">运算</button>
+运算结果:{{z}}
+</body>
+
+</html>

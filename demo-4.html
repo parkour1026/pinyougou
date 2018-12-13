@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular入门小demo-4控制器</title>
+    <script src="angular.min.js"></script>
+
+    <script>
+        //第一步:建立模块
+        var app=angular.module("myApp",[]);
+        //第二步:创建控制器
+        //*注:$scope就是控制层和视图层之间交换数据的桥梁
+        app.controller("myController",function ($scope) {
+            $scope.add=function () {
+                return parseInt($scope.x)+parseInt($scope.y);
+            }
+        });
+    </script>
+
+</head>
+
+<!--第三步:指定要使用的模块和控制器-->
+<body ng-app="myApp" ng-controller="myController">
+第一个数:<input ng-model="x"/>
+第二个数:<input ng-model="y"/>
+两个数的和:{{add()}}
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular入门小demo-6循环数组</title>
+    <script src="angular.min.js"></script>
+
+    <script>
+        //第一步:建立模块
+        var app=angular.module("myApp",[]);
+        //第二步:创建控制器
+        //*注:$scope就是控制层和视图层之间交换数据的桥梁
+        app.controller("myController",function ($scope) {
+            //定义一个数组
+            $scope.list=[3,2,5,6];
+        });
+    </script>
+
+</head>
+
+<!--第三步:指定要使用的模块和控制器-->
+<body ng-app="myApp" ng-controller="myController">
+
+<table>
+    <!--使用一个变量循环数组中的值-->
+    <tr ng-repeat="x in list">
+        <td>{{x}}</td>
+    </tr>
+</table>
+
+</body>
+
+</html>
